@@ -2,23 +2,6 @@
 
 This repository designed to assist developers in quickly building a Teams dashboard tab application using the TeamsFx SDK.
 
-| [SDK Documentation](./sdk-usage.md) | [API Reference](./doc/index.md) |
-| ----------------------------------- | ------------------------------- |
-
-# Table of Contents
-
-1. [Introduction](#introduction)
-2. [Getting Started](#getting-started)
-   - [Prerequisites](#prerequisites)
-   - [Try it out](#try-it-out)
-3. [Understanding the Code](#understanding-the-code)
-4. [How to Add a New Widget](#how-to-add-a-new-widget)
-5. [How to Add a New Dashboard](#how-to-add-a-new-dashboard)
-6. [How to Override the Default Style](#how-to-override-the-default-style)
-   - [Override the default style for the widget](#override-the-default-style-for-the-widget)
-   - [Override the default style for the dashboard](#override-the-default-style-for-the-dashboard)
-7. [How to Add a New Graph Api Call](#how-to-add-a-new-graph-api-call)
-
 # Introduction
 
 This is a Teams tab app that uses the [Fluent UI](https://react.fluentui.dev/?path=/docs/concepts-introduction--page) to display multiple cards that provide an overview of data or content in Microsoft Teams.
@@ -61,29 +44,21 @@ This section walks through the generated code. The project folder contains the f
 
 The following files provide the business logic for the dashboard tab. These files can be updated to fit your business logic requirements. The default implementation provides a starting point to help you get started.
 
-| File                                 | Contents                                           |
-| ------------------------------------ | -------------------------------------------------- |
-| `src/data/ListData.json`             | Data for the list widget                           |
-| `src/models/chartModel.ts`           | Data model for the chart widget                    |
-| `src/models/listModel.ts`            | Data model for the list widget                     |
-| `src/services/chartService.ts`       | A data retrive implementation for the chart widget |
-| `src/services/listService.ts`        | A data retrive implementation for the list widget  |
-| `src/dashboards/SampleDashboard.tsx` | A sample dashboard layout implementation           |
-| `src/styles/ChartWidget.css`         | The chart widget style file                        |
-| `src/styles/ListWidget.css`          | The list widget style file                         |
-| `src/widgets/ChartWidget.tsx`        | A widget implementation that can display a chart   |
-| `src/widgets/ListWidget.tsx`         | A widget implementation that can display a list    |
+| File                                        | Contents                                          |
+| ------------------------------------------- | ------------------------------------------------- |
+| `src/components/sample/listService.ts`      | A data retrive implementation for the list widget |
+| `src/components/sample/ListWidget.css`      | The list widget style file                        |
+| `src/components/sample/SampleDashboard.tsx` | A sample dashboard layout implementation          |
+| `src/widgets/ListWidget.tsx`                | A widget implementation that can display a list   |
 
 The following files are project-related files. You generally will not need to customize these files.
 
-| File                               | Contents                                                     |
-| ---------------------------------- | ------------------------------------------------------------ |
-| `src/index.tsx`                    | Application entry point                                      |
-| `src/App.tsx`                      | Application route                                            |
-| `src/internal/addNewScopes.ts`     | Implementation of new scopes add                             |
-| `src/internal/context.ts`          | TeamsFx Context                                              |
-| `src/internal/login.ts`            | Implementation of login                                      |
-| `src/internal/singletonContext.ts` | Implementation of the TeamsUserCredential instance singleton |
+| File                      | Contents                           |
+| ------------------------- | ---------------------------------- |
+| `src/index.css`           | Application entry point style file |
+| `src/index.tsx`           | Application entry point            |
+| `src/components/App.tsx`  | Application route                  |
+| `src/internal/context.ts` | TeamsFx Context                    |
 
 <p align="right"><a href="#table-of-contents">back to top</a></p>
 
@@ -91,10 +66,8 @@ The following files are project-related files. You generally will not need to cu
 
 You can use the following steps to add a new widget to the dashboard:
 
-1. [Step 1: Define a data model](#step-1-define-a-data-model)
-2. [Step 2: Create a data retrive service](#step-2-create-a-data-retrive-service)
-3. [Step 3: Create a widget file](#step-3-create-a-widget-file)
-4. [Step 4: Add the widget to the dashboard](#step-4-add-the-widget-to-the-dashboard)
+1. [Step 1: Create a widget file](#step-1-create-a-widget-file)
+1. [Step 2: Add the widget to the dashboard](#step-2-add-the-widget-to-the-dashboard)
 
 ### Step 1: Define a data model
 
