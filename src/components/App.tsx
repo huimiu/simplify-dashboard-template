@@ -9,7 +9,7 @@ import {
 } from "@fluentui/react-components";
 import { useTeams } from "@microsoft/teamsfx-react";
 
-import { TeamsFxContext } from "./sample/internal/context";
+import { TeamsFxContext } from "./internal/context";
 import SampleDashboard from "./sample/SampleDashboard";
 import Privacy from "./Privacy";
 import TabConfig from "./TabConfig";
